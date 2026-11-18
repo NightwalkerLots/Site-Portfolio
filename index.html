@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a1b">
+  <meta name="description" content="NightwalkerLots — gaming, music, software development, custom mods, and a creative community.">
+  <meta property="og:title" content="NightwalkerLots | Gaming, Music & Creative Projects">
+  <meta property="og:description" content="Discover music, custom mods, gaming content, and more — all in one place.">
+  <meta property="og:type" content="website">
+  <title>NightwalkerLots | Gaming, Music & Creative Projects</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- SVG sprite: consistent, transparent iconography instead of mismatched icon images. -->
+  <svg class="svg-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-gamepad" viewBox="0 0 32 32"><path d="M11.1 10.4h9.8c4.4 0 6.6 2.3 7.7 7.9l.9 5.1c.4 2.6-1.8 4.1-4 3-1.7-.9-3.8-3.4-5.6-4.4H12c-1.8 1-3.9 3.5-5.6 4.4-2.2 1.1-4.4-.4-4-3l.9-5.1c1-5.6 3.3-7.9 7.8-7.9Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M9.7 14.6v6.1M6.7 17.7h6.1" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/><circle cx="21.6" cy="16.2" r="1.25" fill="currentColor"/><circle cx="25.1" cy="19.3" r="1.25" fill="currentColor"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-arrow-up" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24"><path d="m7 4 13 8-13 8V4Z" fill="currentColor"/></symbol>
+    <symbol id="icon-tag" viewBox="0 0 24 24"><path d="M3 11V4h7l10 10-7 7L3 11Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><circle cx="7.8" cy="8" r="1.5" fill="currentColor"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="m12 2 8 3v5c0 5-3.5 9-8 12-4.5-3-8-7-8-12V5l8-3Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m8 12 3 3 5-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="6" cy="18" rx="3.5" ry="2.5" fill="currentColor"/><ellipse cx="18" cy="16" rx="3.5" ry="2.5" fill="currentColor"/></symbol>
+    <symbol id="icon-discord" viewBox="0 0 24 24"><path d="M18.5 6.2a16 16 0 0 0-3.7-1.1l-.5 1c-1.5-.2-3-.2-4.5 0l-.5-1a16 16 0 0 0-3.7 1.1C3.2 9.6 2.6 13 3 16.4a16 16 0 0 0 4.4 2.3l1-1.6-1.6-.8c.2-.1.4-.3.6-.4 3.1 1.5 6.1 1.5 9.2 0l.6.4-1.6.8 1 1.6a16 16 0 0 0 4.4-2.3c.5-4-.4-7.4-2.5-10.2Z" fill="currentColor"/><ellipse cx="9" cy="12.6" rx="1.1" ry="1.45" fill="#252144"/><ellipse cx="15.1" cy="12.6" rx="1.1" ry="1.45" fill="#252144"/></symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.6" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24"><path d="m3 3 7.3 9.7L3.5 21h2.6l5.5-6.8 5.1 6.8H22l-7.8-10.4L20.6 3H18l-5.1 6.3L8.1 3H3Zm3.8 2h1.1l10.3 14h-1.1L6.8 5Z" fill="currentColor"/></symbol>
+    <symbol id="icon-youtube" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4" fill="currentColor"/><path d="m10 9 6 3-6 3V9Z" fill="#fff"/></symbol>
+    <symbol id="icon-tiktok" viewBox="0 0 24 24"><path d="M14.4 2h3.2c.2 2.6 1.7 4.4 4.2 4.8v3.4a10.3 10.3 0 0 1-4.2-1.2v7c0 4-3.2 6.8-7.1 6.8-4.2 0-7.1-3.1-7.1-7 0-4 3.1-7 7.1-7 .5 0 1 .1 1.6.2v3.6a3.6 3.6 0 0 0-1.6-.3c-1.9 0-3.4 1.4-3.4 3.4s1.5 3.4 3.4 3.4 3.4-1.4 3.4-3.5V2Z" fill="currentColor"/></symbol>
+    <symbol id="icon-coffee" viewBox="0 0 24 24"><path d="M3 9h14v5a7 7 0 0 1-14 0V9Zm14 1h3a3 3 0 0 1 0 6h-3M2 21h17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 3c-2 2 2 3 0 5m5-5c-2 2 2 3 0 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="icon-spotify" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M5.3 9.1c4.6-1.6 9.4-1.2 13.5 1.3M6.3 12.7c4-1.2 8.2-.8 11.6 1.1M7.3 16.1c3.4-.9 6.7-.5 9.5 1.1" stroke="#112819" stroke-width="1.9" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="icon-applemusic" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="currentColor"/><path d="M17.5 5 9.8 6.7v8c-2-1-4.9.2-4.9 2.7 0 2.8 4.8 3.3 5.5.6V9.3l6-1.2V13c-2-.9-4.9.2-4.9 2.7 0 2.8 4.8 3.3 5.5.6V5Z" fill="white"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="m3 7 9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.9"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 12-7 12S5 15 5 10a7 7 0 1 1 14 0Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <a class="skip-to" href="#main">Skip to content</a>
+  <div class="ambient" aria-hidden="true"><div class="ambient-glow glow-one"></div><div class="ambient-glow glow-two"></div></div>
+  <div class="cursor-light" id="cursor-light" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <div class="header-inner container">
+      <a href="#home" class="brand" aria-label="NightwalkerLots — home">
+        <svg class="brand-icon" viewBox="0 0 32 32"><use href="#icon-gamepad"></use></svg>
+        <span>Nightwalker<span class="accent-text">Lots</span></span>
+      </a>
+      <nav id="site-navigation" class="main-nav" aria-label="Primary navigation">
+        <a class="nav-link is-current" href="#home">Home</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#community">Community</a>
+        <a class="nav-contact" href="#contact"><svg viewBox="0 0 24 24"><use href="#icon-mail"></use></svg>Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="Open navigation">
+        <svg class="menu-icon" viewBox="0 0 24 24"><use href="#icon-menu"></use></svg>
+        <svg class="close-icon" viewBox="0 0 24 24"><use href="#icon-close"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-image" aria-hidden="true"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="hero-kicker">THE NIGHTWALKERLOTS CREATIVE HUB</p>
+          <h1 id="hero-title">Discover Your Next<br>Favorite <span class="gradient-text">Content</span></h1>
+          <p class="hero-lead">Gaming, custom mods, music, and more —<br class="desktop-only"> all in one place.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects"><svg viewBox="0 0 24 24"><use href="#icon-play"></use></svg>Explore My Content</a>
+            <a class="btn btn-secondary" href="#community"><svg viewBox="0 0 24 24"><use href="#icon-discord"></use></svg>Join the Community</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bottom" aria-hidden="true"></div>
+    </section>
+
+    <section class="partners container" aria-label="Featured partners and gear">
+      <div class="partner-grid">
+        <article class="feature-card partner-card interactive-card nyxi-card">
+          <div class="partner-image nyxi-visual">
+            <div class="product-spotlight"></div>
+            <p class="nyxi-code">Use my code for<br><strong>10% off!</strong></p>
+            <a class="nyxi-qr" href="http://nyxigame.com/referral/nightwalkerlots" target="_blank" rel="noopener noreferrer sponsored" aria-label="Open NYXI referral page">
+              <img src="assets/nyxi-qr.png" alt="NYXI referral QR code" width="170" height="177">
+            </a>
+            <img class="nyxi-product" src="assets/nyxi-joycons.webp" alt="NYXI RGB gaming controllers" width="393" height="393" loading="lazy">
+          </div>
+          <div class="partner-details">
+            <div class="partner-heading"><span class="icon-tile"><svg viewBox="0 0 24 24"><use href="#icon-tag"></use></svg></span><h2>NYXI Accessories</h2></div>
+            <p>High-quality gaming accessories to level up your setup.</p>
+            <a class="btn btn-primary btn-small" href="http://nyxigame.com/referral/nightwalkerlots" target="_blank" rel="noopener noreferrer sponsored">Check Out NYXI <svg viewBox="0 0 24 24"><use href="#icon-arrow"></use></svg></a>
+          </div>
+        </article>
+
+        <article class="feature-card partner-card interactive-card gear-card">
+          <div class="partner-image gear-visual">
+            <div class="gear-aura" aria-hidden="true"></div>
+            <img src="assets/controller.webp" alt="Black gaming controller with purple and blue RGB lighting" width="1050" height="1011" loading="lazy">
+          </div>
+          <div class="partner-details">
+            <div class="partner-heading"><span class="icon-tile"><svg viewBox="0 0 32 32"><use href="#icon-gamepad"></use></svg></span><h2>Gaming Gear</h2></div>
+            <p>Controllers and accessories for a better gaming experience.</p>
+            <a class="btn btn-primary btn-small" href="https://nyxigame.com/affiliate-program/sell-product?source_type=sales_plugin_af&amp;slt=sales_plugin_af&amp;productPage=1&amp;referral_code=XMRTOG0MTAAK" target="_blank" rel="noopener noreferrer sponsored">Browse Gear <svg viewBox="0 0 24 24"><use href="#icon-arrow"></use></svg></a>
+          </div>
+        </article>
+
+        <article class="feature-card partner-card interactive-card nord-card">
+          <div class="partner-image nord-visual">
+            <img src="assets/nordvpn.webp" alt="NordVPN displayed on a purple-lit gaming setup" width="1448" height="1086" loading="lazy">
+            <span class="deal-badge">Up to 77% off</span>
+          </div>
+          <div class="partner-details">
+            <div class="partner-heading"><span class="icon-tile"><svg viewBox="0 0 24 24"><use href="#icon-shield"></use></svg></span><h2>NordVPN Deal</h2></div>
+            <p>Get up to 77% off + 3 months extra with my link.</p>
+            <a class="btn btn-primary btn-small" href="https://go.nordvpn.net/aff_c?offer_id=15&amp;aff_id=130579&amp;url_id=902" target="_blank" rel="noopener noreferrer sponsored">Get NordVPN <svg viewBox="0 0 24 24"><use href="#icon-arrow"></use></svg></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="section-divider container" aria-hidden="true"></div>
+
+    <section class="story-section section-spacing container" aria-label="NightwalkerLots and community">
+      <article class="discord-card feature-card interactive-card" id="community">
+        <div class="discord-orb" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-discord"></use></svg></div>
+        <div class="discord-heading"><span class="discord-logo"><svg viewBox="0 0 24 24"><use href="#icon-discord"></use></svg></span><h2>Discord<br>Community</h2></div>
+        <p class="discord-status"><span class="status-dot"></span> CREATOR COMMUNITY</p>
+        <p class="discord-description">Join the community, chat with other gamers and creators, get updates, and be part of upcoming projects!</p>
+        <a class="btn btn-primary" href="https://www-nightwalkerlots-xyz.filesusr.com/html/8af070_6d37d5c52394d5da741f7d30d0a78daa.html" target="_blank" rel="noopener noreferrer">Open Our Discord <svg viewBox="0 0 24 24"><use href="#icon-arrow-up"></use></svg></a>
+      </article>
+
+      <article class="about-copy" id="about">
+        <span class="eyebrow">THE CREATOR</span>
+        <h2>About me</h2>
+        <span class="tiny-rule" aria-hidden="true"></span>
+        <p>NightwalkerLots is your go-to guy for unique content. I specialize in music, software development, and entertaining gaming videos that cater to all!</p>
+        <p>Join me and my community on this journey together as we grow and game together.</p>
+        <nav class="social-icons" aria-label="Find NightwalkerLots on social media">
+          <a href="https://www.instagram.com/nightwalkerlots" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram" class="social social-instagram"><svg viewBox="0 0 24 24"><use href="#icon-instagram"></use></svg></a>
+          <a href="https://www.twitter.com/lastofthesorrow" target="_blank" rel="noopener noreferrer" aria-label="X" title="X" class="social"><svg viewBox="0 0 24 24"><use href="#icon-x"></use></svg></a>
+          <a href="https://www.youtube.com/c/nightwalkerlots" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube" class="social social-youtube"><svg viewBox="0 0 24 24"><use href="#icon-youtube"></use></svg></a>
+          <a href="https://www.tiktok.com/@nightwalkerlots_real" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok" class="social"><svg viewBox="0 0 24 24"><use href="#icon-tiktok"></use></svg></a>
+          <a href="https://buymeacoffee.com/nightwalkerlots" target="_blank" rel="noopener noreferrer" aria-label="Buy Me a Coffee" title="Buy Me a Coffee" class="social social-coffee"><svg viewBox="0 0 24 24"><use href="#icon-coffee"></use></svg></a>
+        </nav>
+      </article>
+
+      <div class="portrait-panel interactive-card" aria-label="Illustration of NightwalkerLots">
+        <img src="assets/avatar.webp" alt="Illustrated smiling gamer wearing headphones and a maroon hoodie" width="900" height="900" loading="lazy">
+      </div>
+    </section>
+
+    <div class="section-divider container" aria-hidden="true"></div>
+
+    <section class="projects-section section-spacing container" id="projects" aria-labelledby="projects-heading">
+      <header class="section-heading">
+        <span class="eyebrow">FEATURED PROJECTS</span>
+        <h2 id="projects-heading">Check Out My Latest Creations</h2>
+        <p>Original music, custom game content, and more.</p>
+      </header>
+      <div class="project-grid">
+        <article class="feature-card project-card interactive-card music-card">
+          <div class="project-art">
+            <img src="assets/voices.webp" alt="Voices music artwork: mysterious hooded figure in a misty forest" width="900" height="900" loading="lazy">
+            <span class="project-glint" aria-hidden="true"></span>
+          </div>
+          <div class="project-body">
+            <p class="project-type"><svg viewBox="0 0 24 24"><use href="#icon-music"></use></svg> Music Project</p>
+            <h3>Voices</h3>
+            <p>An original music project with a dark, atmospheric sound and personal themes.</p>
+            <div class="project-actions">
+              <a class="btn btn-primary btn-small" href="https://open.spotify.com/artist/1chLwtkvgpvyIuLLMdyUYN?si=3BCkjMi7Ra6UsEX2oeLCsg" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><use href="#icon-play"></use></svg> Listen Now</a>
+              <div class="music-links" aria-label="Music streaming platforms">
+                <a href="https://open.spotify.com/artist/1chLwtkvgpvyIuLLMdyUYN?si=3BCkjMi7Ra6UsEX2oeLCsg" target="_blank" rel="noopener noreferrer" class="spotify-link" aria-label="Listen on Spotify" title="Spotify"><svg viewBox="0 0 24 24"><use href="#icon-spotify"></use></svg></a>
+                <a href="https://music.apple.com/us/artist/nightwalkerlots/1698489197" target="_blank" rel="noopener noreferrer" class="apple-link" aria-label="Listen on Apple Music" title="Apple Music"><svg viewBox="0 0 24 24"><use href="#icon-applemusic"></use></svg></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature-card project-card interactive-card zombies-card">
+          <div class="project-art">
+            <img src="assets/zombies.webp" alt="Zombies Mods artwork: a soldier surrounded by zombies in a moonlit ruined compound" width="1448" height="1086" loading="lazy">
+            <span class="project-glint" aria-hidden="true"></span>
+          </div>
+          <div class="project-body">
+            <p class="project-type"><svg viewBox="0 0 32 32"><use href="#icon-gamepad"></use></svg> Gaming Project</p>
+            <h3>Custom Maps &amp; Mods</h3>
+            <p>Custom maps and mod menus for a classic zombies experience.</p>
+            <div class="project-actions mod-actions">
+              <button type="button" class="btn btn-secondary btn-small mods-toggle" id="mods-toggle" aria-controls="mods-list" aria-expanded="false"><svg viewBox="0 0 32 32"><use href="#icon-gamepad"></use></svg> Explore Mods <svg class="expand-arrow" viewBox="0 0 24 24"><use href="#icon-arrow"></use></svg></button>
+            </div>
+            <div class="mods-list" id="mods-list" hidden>
+              <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3053277044" target="_blank" rel="noopener noreferrer">Wonder House Custom Map <svg viewBox="0 0 24 24"><use href="#icon-arrow-up"></use></svg></a>
+              <a href="https://youtu.be/7QWYqtLUdRE" target="_blank" rel="noopener noreferrer">Frostbite Mod Menu <svg viewBox="0 0 24 24"><use href="#icon-arrow-up"></use></svg></a>
+              <a href="https://youtu.be/MiLDymjxd7M" target="_blank" rel="noopener noreferrer">Icebreaker Mod Menu <svg viewBox="0 0 24 24"><use href="#icon-arrow-up"></use></svg></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="footer-art" aria-hidden="true"><img src="assets/controller.webp" alt="" width="1050" height="1011" loading="lazy"></div>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#home" class="brand"><svg class="brand-icon" viewBox="0 0 32 32"><use href="#icon-gamepad"></use></svg><span>Nightwalker<span class="accent-text">Lots</span></span></a>
+        <p>Gaming · Music · Development · Content Creation</p>
+      </div>
+      <div class="footer-contact">
+        <h2>Get in Touch</h2>
+        <p>Business / Collaboration Inquiries</p>
+        <a href="mailto:nightwalkerlots@gmail.com"><svg viewBox="0 0 24 24"><use href="#icon-mail"></use></svg>nightwalkerlots@gmail.com</a>
+        <span><svg viewBox="0 0 24 24"><use href="#icon-pin"></use></svg>San Antonio, TX</span>
+      </div>
+    </div>
+    <div class="footer-bottom container"><span>© <span id="year">2026</span> NightwalkerLots. All rights reserved.</span><a href="#home">Back to top ↑</a></div>
+  </footer>
+</body>
+</html>
